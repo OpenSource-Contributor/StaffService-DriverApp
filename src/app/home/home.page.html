@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="dark">
+      Dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="text-align: center">
+    <img src="assets/images/logo.png" width="150" height="150">
+  </div>
+
+  <div style="text-align: center">
+    <ion-button expand="full" color="danger">Last Location</ion-button>
+    <ion-card>
+      <ion-list *ngIf="lastCoords">
+        <ion-item>Latitude : <span class="red">{{lastCoords.lat}}</span></ion-item>
+        <ion-item>Longitude : <span class="red">{{lastCoords.lng}}</span></ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+
+  <div style="text-align: center">
+    <ion-button expand="full">Current Location</ion-button>
+
+    <ion-card>
+      <ion-list *ngIf="currentCoords">
+        <ion-item>Latitude : <span class="green">{{currentCoords.lat}}</span></ion-item>
+        <ion-item>Longitude : <span class="green">{{currentCoords.lng}}</span></ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+
+  <div style="text-align: center">
+    <ion-button expand="full" color="dark">Last Gap</ion-button>
+    <ion-list>
+    <ion-item *ngIf="lastGap"><span class="black">{{lastGap}} Meters</span></ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
