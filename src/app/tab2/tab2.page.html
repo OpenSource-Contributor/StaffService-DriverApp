@@ -7,7 +7,15 @@
 </ion-header>
 
 <ion-content>
-  <agm-map *ngIf="service._currentLocation" [zoom]="zoom" [latitude]="service._currentLocation.lat" [longitude]="service._currentLocation.lng">
-    <agm-marker [latitude]="service._currentLocation.lat" [longitude]="service._currentLocation.lng"></agm-marker>
+  <agm-map *ngIf="service._currentLocation.length" [zoom]="zoom" [latitude]="service._currentLocation[service._currentLocation.length-1].lat" [longitude]="service._currentLocation[service._currentLocation.length-1].lng">
+    <agm-marker [latitude]="service._currentLocation[service._currentLocation.length-1].lat" [longitude]="service._currentLocation[service._currentLocation.length-1].lng"></agm-marker>
   </agm-map>
+
+  <agm-polyline [geodesic]="true" strokeWeight="0.5" strokeColor="black" *ngIf="service._currentLocation">
+    <agm-polyline-point *ngFor="let loc of service._currentLocation"
+                        [latitude]="loc.lat"
+                        [longitude]="loc.lng">
+    </agm-polyline-point>
+  </agm-polyline>
+
 </ion-content>

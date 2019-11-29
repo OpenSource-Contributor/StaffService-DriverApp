@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {Geolocation} from '@ionic-native/geolocation/ngx';
-import {AgmCoreModule} from '@agm/core';
+import {AgmCoreModule, PolylineManager} from '@agm/core';
 import {environment} from '../environments/environment';
 import {AndroidPermissions} from '@ionic-native/android-permissions/ngx';
 @NgModule({
