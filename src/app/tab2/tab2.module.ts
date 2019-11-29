@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
-import {AgmCoreModule} from '@agm/core';
+import {AgmCoreModule, GoogleMapsAPIWrapper, PolylineManager} from '@agm/core';
 
 @NgModule({
     imports: [
@@ -12,8 +12,9 @@ import {AgmCoreModule} from '@agm/core';
         CommonModule,
         FormsModule,
         RouterModule.forChild([{path: '', component: Tab2Page}]),
-        AgmCoreModule
+        AgmCoreModule,
     ],
-  declarations: [Tab2Page]
+  declarations: [Tab2Page],
+    providers: [PolylineManager, GoogleMapsAPIWrapper]
 })
 export class Tab2PageModule {}
